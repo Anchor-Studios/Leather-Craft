@@ -1,0 +1,71 @@
+{
+  "mod_elements": [
+    {
+      "name": "LeatherRecipe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leather_recipe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/leather_craft/recipes/leather_recipe_1.json"
+        ]
+      }
+    },
+    {
+      "name": "LeatherRecipe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leather_recipe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/leather_craft/recipes/leather_recipe_2.json"
+        ]
+      }
+    },
+    {
+      "name": "LeatherRecipe3",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leather_recipe_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/leather_craft/recipes/leather_recipe_3.json"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "leather_craft",
+    "modName": "Leather Craft",
+    "version": "1.3.0",
+    "description": "Allows you to create leather by smelting rotten flesh. It basically adds a recipe for it.",
+    "author": "Anchor Studios",
+    "websiteURL": "https://bit.ly/anchorstudios",
+    "license": "MIT License",
+    "serverSideOnly": true,
+    "updateURL": "https://api.cfwidget.com/624669",
+    "modPicture": "leathercraftlogo",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.19.2",
+    "credits": "Special thanks to everyone who contributed with their support, feedback and collaboration.",
+    "modElementsPackage": "net.leathercraft"
+  },
+  "mcreatorVersion": 202400232117
+}
