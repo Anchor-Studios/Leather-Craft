@@ -8,7 +8,7 @@
       "registry_name": "leather_recipe_1",
       "metadata": {
         "files": [
-          "src/main/resources/data/leather_craft/recipes/leather_recipe_1.json"
+          "src/main/resources/data/leather_craft/recipe/leather_recipe_1.json"
         ]
       }
     },
@@ -20,7 +20,7 @@
       "registry_name": "leather_recipe_2",
       "metadata": {
         "files": [
-          "src/main/resources/data/leather_craft/recipes/leather_recipe_2.json"
+          "src/main/resources/data/leather_craft/recipe/leather_recipe_2.json"
         ]
       }
     },
@@ -32,7 +32,7 @@
       "registry_name": "leather_recipe_3",
       "metadata": {
         "files": [
-          "src/main/resources/data/leather_craft/recipes/leather_recipe_3.json"
+          "src/main/resources/data/leather_craft/recipe/leather_recipe_3.json"
         ]
       }
     }
@@ -51,10 +51,10 @@
   "workspaceSettings": {
     "modid": "leather_craft",
     "modName": "Leather Craft",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Allows you to create leather by smelting rotten flesh. It basically adds a recipe for it.",
     "author": "Anchor Studios",
-    "websiteURL": "https://bit.ly/anchorstudios",
+    "websiteURL": "https://www.anchorstudios.site",
     "license": "MIT License",
     "serverSideOnly": true,
     "updateURL": "https://api.cfwidget.com/624669",
@@ -63,9 +63,9 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.20.6",
+    "currentGenerator": "neoforge-1.21.4",
     "credits": "Special thanks to everyone who contributed with their support, feedback and collaboration.",
     "modElementsPackage": "net.leathercraft"
   },
-  "mcreatorVersion": 202400232117
+  "mcreatorVersion": 202500110519
 }

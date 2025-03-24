@@ -1,13 +1,13 @@
 modLoader="javafml"
-loaderVersion="[2,)"
+loaderVersion="[4,)"
 license="MIT License"
 
 [[mods]]
 modId="leather_craft"
-version="1.3.0"
+version="1.4.0"
 displayName="Leather Craft"
 updateJSONURL="https://api.cfwidget.com/624669"
-displayURL="https://bit.ly/anchorstudios"
+displayURL="https://www.anchorstudios.site"
 logoFile="logo.png"
 credits="Special thanks to everyone who contributed with their support, feedback and collaboration."
 authors="Anchor Studios"
@@ -20,14 +20,14 @@ displayTest="IGNORE_SERVER_VERSION"
 [[dependencies.leather_craft]]
     modId="neoforge"
     type="required"
-    versionRange="[20.6.117,)"
+    versionRange="[21.4.101-beta,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.leather_craft]]
     modId="minecraft"
     type="required"
-    versionRange="[1.20.6]"
+    versionRange="[1.21.4]"
     ordering="AFTER"
     side="BOTH"
 
