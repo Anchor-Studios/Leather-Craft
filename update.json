@@ -1,0 +1,17 @@
+{
+  "leather_craft": {
+    "homepage": "https://www.anchorstudios.site/",
+    "promos": {
+      "1.20.1-forge-latest": "2.0.0",
+      "1.20.1-forge-recommended": "2.0.0",
+      "1.20.6-neoforge-latest": "2.0.0",
+      "1.20.6-neoforge-recommended": "2.0.0",
+      "1.21.1-neoforge-latest": "2.0.0",
+      "1.21.1-neoforge-recommended": "2.0.0"
+    },
+    "2.0.0": {
+      "changes": "https://github.com/Anchor-Studios/Leather-Craft/releases/tag/2.0.0",
+      "downloadUrl": "https://www.anchorstudios.site/"
+    }
+  }
+}
