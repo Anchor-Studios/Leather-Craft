@@ -1,85 +1,74 @@
 plugins {
-    id 'java-library'
-    id 'net.neoforged.moddev' version '2.0.140'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
+	id 'maven-publish'
 }
 
-tasks.named('wrapper', Wrapper).configure {
-    distributionType = Wrapper.DistributionType.BIN
-}
-
-version = "${project.mod_version}-neoforge-1.21.x"
-group = project.mod_group_id
+version = "${project.mod_version}-fabric-1.21.x"
+group = project.maven_group
 
 base {
-    archivesName = "leathercraft"
+	archivesName = project.archives_base_name
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
-
-neoForge {
-    version = project.neo_version
-
-    // parchment {
-    //    mappingsVersion = '1.21-2024.06.23-1.21'
-    //    minecraftVersion = '1.21'
-    // }
-
-    runs {
-        client {
-            client()
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-        }
-
-        server {
-            server()
-            programArgument '--nogui'
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-        }
-
-        gameTestServer {
-            type = "gameTestServer"
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-        }
-
-        data {
-            data()
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-        }
-    }
-
-    mods {
-        "${mod_id}" {
-            sourceSet(sourceSets.main)
-        }
-    }
+repositories {
+	// Add repositories to retrieve artifacts from in here.
+	// You should only use this when depending on other mods because
+	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
+	// for more information about repositories.
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-// Sets up a dependency between the start block of the processResources task and the end block of the compileJava task.
-// This means that processResources will run after compileJava has finished.
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
 processResources {
-    dependsOn compileJava
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
 }
 
-// Configures the processResources task to replace properties in resource files
-tasks.named('processResources', ProcessResources).configure {
-    var replaceProperties = [
-            minecraft_version   : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version         : neo_version,
-            neo_version_range   : neo_version_range,
-            loader_version_range: loader_version_range,
-            mod_id              : mod_id,
-            mod_name            : mod_name,
-            mod_license         : mod_license,
-            mod_version         : mod_version,
-            mod_authors         : mod_authors,
-            mod_description     : mod_description,
-    ]
-    inputs.properties replaceProperties
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+}
 
-    filesMatching(['META-INF/neoforge.mods.toml']) {
-        expand replaceProperties + [project: project]
-    }
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}"}
+	}
+}
+
+// configure the maven publication
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+
+	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+	repositories {
+		// Add repositories to publish to here.
+		// Notice: This block does NOT have the same function as the block in the top level.
+		// The repositories here will be used for publishing your artifact, not for
+		// retrieving dependencies.
+	}
 }

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "leather_craft",
+  "version": "${version}",
+  "name": "Leather Craft",
+  "description": "Converts Rotten Flesh into Leather by heating.",
+  "authors": [
+    "Yigit Guven"
+  ],
+  "contact": {
+    "homepage": "https://yigitguven.net/",
+    "sources": "https://github.com/yigitguven/Leather-Craft"
+  },
+  "license": "MIT",
+  "icon": "META-INF/logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yigitguven.leathercraft.LeatherCraftFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
