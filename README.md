@@ -2,7 +2,7 @@
 
 **Leather Craft** is a simple but essential utility mod for Minecraft that allows you to convert **Rotten Flesh** into **Leather** by cooking it. No more throwing away potential resources!
 
-![Leather Craft Logo](src/main/resources/logo.png)
+![Leather Craft Logo](src/main/resources/META-INF/logo.png)
 
 ## 🔥 Features
 - **Furnace**: Cook Rotten Flesh into Leather.
