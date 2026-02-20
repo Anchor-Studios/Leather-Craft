@@ -24,8 +24,10 @@ run/
 
 # Mod specific
 run/
+run-data/
 logs/
 crash-reports/
 
 # Local JDK
+jdk17/
 jdk21/
